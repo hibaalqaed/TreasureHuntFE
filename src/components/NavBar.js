@@ -1,7 +1,3 @@
-// Buttons
-import SignupButton from "./buttons/SignupButton";
-import SigninButton from "./buttons/SigninButton";
-
 // Stores
 import authStore from "../stores/authStore";
 
@@ -11,34 +7,56 @@ import { RiLogoutCircleRLine } from "react-icons/ri";
 
 // Styles
 import { UsernameStyled } from "../styles";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <nav className="navbar navbar-expand-lg">
-      <div className="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul className="navbar-nav ml-auto">
-          <li className="nav-item">
-            {authStore.user ? (
-              <>
-                <UsernameStyled>
-                  Hello, {authStore.user.username}
-                </UsernameStyled>
-                <RiLogoutCircleRLine
-                  onClick={authStore.signout}
-                  size="2em"
-                  color="red"
-                />
-              </>
-            ) : (
-              <>
-                <SigninButton />
-                <SignupButton />
-              </>
-            )}
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <ul className="nav justify-content-end">
+      <li className="nav-item">
+        <a className="nav-link active" aria-current="page" href="#">
+          {authStore.user ? (
+            <>
+              <UsernameStyled>Hello, {authStore.user.username}</UsernameStyled>
+              <RiLogoutCircleRLine
+                onClick={authStore.signout}
+                size="2em"
+                color="red"
+              />
+            </>
+          ) : (
+            <>
+              <Link to="/signin">
+                <button
+                  onClick={() => window.scroll(0, 1000)}
+                  style={{
+                    margin: "5px",
+                    borderRadius: "50%",
+                    width: "60px",
+                    height: "60px",
+                  }}
+                >
+                  Sign In
+                </button>
+              </Link>
+
+              <Link to="/signup">
+                <button
+                  style={{
+                    margin: "5px",
+                    borderRadius: "50%",
+                    width: "60px",
+                    height: "60px",
+                  }}
+                  onClick={() => window.scroll(0, 1000)}
+                >
+                  Sign Up
+                </button>
+              </Link>
+            </>
+          )}
+        </a>
+      </li>
+    </ul>
   );
 };
 
