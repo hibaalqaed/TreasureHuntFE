@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+import { Link } from "react-router-dom";
+import authStore from "../stores/authStore";
+
 const SigninForm = () => {
   const [user, setUser] = useState({
     username: "",
@@ -36,9 +39,12 @@ const SigninForm = () => {
           onChange={handleChange}
         />
       </div>
+      {/* <Link to="/"> */}
       <button type="submit" className="btn btn-primary">
         Sign In
       </button>
+      {/* </Link> */}
+      {/* <button className="btn btn-primary">Back</button> */}
     </form>
   );
 };

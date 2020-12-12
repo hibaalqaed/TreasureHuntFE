@@ -1,21 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 
-const SignupButton = () => {
+const SigninButton = () => {
   return (
     <>
       <button
+        onClick={() => window.scroll(0, 1000)}
         style={{
           margin: "5px",
           borderRadius: "50%",
           width: "60px",
           height: "60px",
         }}
-        onClick={() => window.scroll(0, 1000)}
       >
-        Sign Up
+        Sign In
       </button>
     </>
   );
 };
 
-export default SignupButton;
+export default SigninButton;

@@ -1,6 +1,8 @@
 import React from "react";
 import { ButtonsDivStyles } from "../styles";
 import { Link } from "react-router-dom";
+import { observer } from "mobx-react";
+
 const Home = () => {
   return (
     <div>
@@ -21,6 +23,7 @@ const Home = () => {
             Random
           </button>
         </Link>
+        {/* if token exist show */}
         <Link to="/treasure">
           <button
             style={{
@@ -41,4 +44,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default observer(Home);

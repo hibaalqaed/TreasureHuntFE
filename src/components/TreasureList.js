@@ -1,3 +1,4 @@
+import { observer } from "mobx-react";
 import React from "react";
 
 const TreasureList = ({ things }) => {
@@ -11,4 +12,4 @@ const TreasureList = ({ things }) => {
   );
 };
 
-export default TreasureList;
+export default observer(TreasureList);

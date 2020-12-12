@@ -1,19 +1,19 @@
 import { useState } from "react";
 import authStore from "../stores/authStore";
+import { Link } from "react-router-dom";
 
-const SignupForm = ({ closeForm, isOpen }) => {
-  const [user, setUser] = useState({
+const SignupForm = () => {
+  const [user2, setUser2] = useState({
     username: "",
     password: "",
   });
 
   const handleChange = (event) =>
-    setUser({ ...user, [event.target.name]: event.target.value });
+    setUser2({ ...user2, [event.target.name]: event.target.value });
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    authStore.signup(user);
-    closeForm();
+    authStore.signup(user2);
   };
 
   return (
@@ -22,18 +22,17 @@ const SignupForm = ({ closeForm, isOpen }) => {
         <label className="form-label">Username:</label>
         <input
           name="username"
-          value={user.username}
+          value={user2.username}
           type="text"
           className="form-control"
           onChange={handleChange}
-          isOpen={isOpen}
         />
       </div>
       <div className="mb-3">
         <label className="form-label">Password:</label>
         <input
           name="password"
-          value={user.password}
+          value={user2.password}
           type="password"
           className="form-control"
           onChange={handleChange}
@@ -42,6 +41,9 @@ const SignupForm = ({ closeForm, isOpen }) => {
       <button type="submit" className="btn btn-primary">
         Sign Up
       </button>
+      <Link to="/">
+        <button className="btn btn-primary">Back</button>
+      </Link>
     </form>
   );
 };

@@ -1,12 +1,12 @@
 // React
-
+import { observer } from "mobx-react";
 // Components
-import NavBar from "./components/NavBar";
 
 // Styles
 import { GlobalStyle } from "./styles";
 import { ThemeProvider } from "styled-components";
 import Routes from "./components/Routes";
+import NavBar from "./components/NavBar";
 
 function App() {
   const theme = {
@@ -25,4 +25,4 @@ function App() {
   );
 }
 
-export default App;
+export default observer(App);

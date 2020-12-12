@@ -10,6 +10,7 @@ import { UsernameStyled } from "../styles";
 import { Link } from "react-router-dom";
 
 import SignupButton from "./SignupButton";
+import SigninButton from "./SigninButton";
 
 const NavBar = () => {
   return (
@@ -19,31 +20,22 @@ const NavBar = () => {
           {authStore.user ? (
             <>
               <UsernameStyled>Hello, {authStore.user.username}</UsernameStyled>
-              <RiLogoutCircleRLine
-                onClick={authStore.signout}
-                size="2em"
-                color="red"
-              />
+              <Link to="/">
+                <RiLogoutCircleRLine
+                  onClick={authStore.signout}
+                  size="2em"
+                  color="red"
+                />
+              </Link>
             </>
           ) : (
             <>
               <Link to="/signin">
-                <button
-                  onClick={() => window.scroll(0, 1000)}
-                  style={{
-                    margin: "5px",
-                    borderRadius: "50%",
-                    width: "60px",
-                    height: "60px",
-                  }}
-                >
-                  Sign In
-                </button>
+                <SigninButton />
               </Link>
-
-              {/* <Link to="/signup"> */}
-              <SignupButton />
-              {/* </Link> */}
+              <Link to="/signup">
+                <SignupButton />
+              </Link>
             </>
           )}
         </a>

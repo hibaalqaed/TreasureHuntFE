@@ -7,10 +7,19 @@ import treasureStore from "../stores/treasureStore";
 import Home from "./Home";
 import TreasureList from "./TreasureList";
 import RandomList from "./RandomList";
+import SignupForm from "./SignupForm";
+import React from "react";
+import SigninForm from "./SigninForm";
 
 const Routes = () => {
   return (
     <Switch>
+      <Route path="/signup">
+        <SignupForm />
+      </Route>
+      <Route path="/signin">
+        <SigninForm />
+      </Route>
       <Route path="/treasure">
         <TreasureList things={treasureStore.treasurs} />
       </Route>
