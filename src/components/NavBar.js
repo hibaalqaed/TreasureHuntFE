@@ -9,6 +9,8 @@ import { RiLogoutCircleRLine } from "react-icons/ri";
 import { UsernameStyled } from "../styles";
 import { Link } from "react-router-dom";
 
+import SignupButton from "./SignupButton";
+
 const NavBar = () => {
   return (
     <ul className="nav justify-content-end">
@@ -39,19 +41,9 @@ const NavBar = () => {
                 </button>
               </Link>
 
-              <Link to="/signup">
-                <button
-                  style={{
-                    margin: "5px",
-                    borderRadius: "50%",
-                    width: "60px",
-                    height: "60px",
-                  }}
-                  onClick={() => window.scroll(0, 1000)}
-                >
-                  Sign Up
-                </button>
-              </Link>
+              {/* <Link to="/signup"> */}
+              <SignupButton />
+              {/* </Link> */}
             </>
           )}
         </a>

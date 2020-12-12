@@ -1,6 +1,7 @@
 import { useState } from "react";
+import authStore from "../stores/authStore";
 
-const SignupForm = () => {
+const SignupForm = ({ closeForm, isOpen }) => {
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -12,6 +13,7 @@ const SignupForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     authStore.signup(user);
+    closeForm();
   };
 
   return (
@@ -24,6 +26,7 @@ const SignupForm = () => {
           type="text"
           className="form-control"
           onChange={handleChange}
+          isOpen={isOpen}
         />
       </div>
       <div className="mb-3">

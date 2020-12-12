@@ -9,19 +9,6 @@ class AuthStore {
 
   user = null;
 
-  checkForToken = () => {
-    const token = localStorage.getItem("myToken");
-    if (token) {
-      const currentTime = Date.now();
-      const user = decode(token);
-      if (user.exp >= currentTime) {
-        this.setUser(token);
-      } else {
-        this.signout();
-      }
-    }
-  };
-
   setUser = (token) => {
     localStorage.setItem("myToken", token);
     instance.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -52,8 +39,20 @@ class AuthStore {
     localStorage.removeItem("myToken");
     this.user = null;
   };
+  // checkForToken = () => {
+  //   const token = localStorage.getItem("myToken");
+  //   if (token) {
+  //     const currentTime = Date.now();
+  //     const user = decode(token);
+  //     if (user.exp >= currentTime) {
+  //       this.setUser(token);
+  //     } else {
+  //       this.signout();
+  //     }
+  //   }
+  // };
 }
 
 const authStore = new AuthStore();
-authStore.checkForToken();
+// authStore.checkForToken();
 export default authStore;
