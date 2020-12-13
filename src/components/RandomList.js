@@ -5,7 +5,7 @@ const RandomList = ({ things }) => {
 
   return (
     <div>
-      <p>This is random page</p>
+      <p>This is the random list:</p>
       <p>{randomList}</p>
     </div>
   );

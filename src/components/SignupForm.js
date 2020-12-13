@@ -38,11 +38,28 @@ const SignupForm = () => {
           onChange={handleChange}
         />
       </div>
-      <button type="submit" className="btn btn-primary">
+      <button
+        type="submit"
+        style={{
+          margin: "5px",
+          borderRadius: "50%",
+          width: "60px",
+          height: "60px",
+        }}
+      >
         Sign Up
       </button>
       <Link to="/">
-        <button className="btn btn-primary">Back</button>
+        <button
+          style={{
+            margin: "5px",
+            borderRadius: "50%",
+            width: "60px",
+            height: "60px",
+          }}
+        >
+          Back
+        </button>
       </Link>
     </form>
   );

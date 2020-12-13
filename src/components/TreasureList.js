@@ -6,7 +6,7 @@ const TreasureList = ({ things }) => {
 
   return (
     <div>
-      <p>This is treasure page</p>
+      <p>This is the treasure list:</p>
       <p>{treasureList}</p>
     </div>
   );

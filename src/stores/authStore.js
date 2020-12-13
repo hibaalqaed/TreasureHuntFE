@@ -8,6 +8,7 @@ class AuthStore {
   }
 
   user = null;
+
   checkForToken = () => {
     const token = localStorage.getItem("myToken");
     console.log("checkForToken -> token", token);
@@ -40,7 +41,6 @@ class AuthStore {
   signin = async (userData) => {
     try {
       const res = await instance.post("/signin", userData);
-      console.log("authStore -> signin -> res.data", res.data);
       this.setUser(res.data.token);
     } catch (error) {
       //ctr+opt+l to console log

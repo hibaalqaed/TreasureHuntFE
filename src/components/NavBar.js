@@ -19,12 +19,14 @@ const NavBar = () => {
         <a className="nav-link active" aria-current="page" href="#">
           {authStore.user ? (
             <>
-              <UsernameStyled>Hello, {authStore.user.username}</UsernameStyled>
               <Link to="/">
+                <UsernameStyled>
+                  Hello, {authStore.user.username}
+                </UsernameStyled>
                 <RiLogoutCircleRLine
                   onClick={authStore.signout}
                   size="2em"
-                  color="red"
+                  color="black"
                 />
               </Link>
             </>

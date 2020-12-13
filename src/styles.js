@@ -32,4 +32,5 @@ export const ButtonsDivStyles = styled.div`
 
 export const UsernameStyled = styled.p`
   padding: 0.25em 1em;
+  color: black;
 `;
